@@ -5,6 +5,8 @@
  */
 package logica;
 
+import dao.Cliente;
+
 /**
  *
  * @author Vinni 

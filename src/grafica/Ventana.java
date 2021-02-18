@@ -10,7 +10,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 import javax.swing.UnsupportedLookAndFeelException;
-import logica.Cliente;
+import dao.Cliente;
 import logica.Prestamo;
 
 /**

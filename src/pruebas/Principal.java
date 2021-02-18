@@ -2,7 +2,7 @@ package pruebas;
 
 import java.util.Date;
 import java.util.Scanner;
-import logica.Cliente;
+import dao.Cliente;
 import logica.Prestamo;
 
 /**

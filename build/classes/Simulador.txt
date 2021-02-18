@@ -1,0 +1,15 @@
+Objeto Simulador. 
+* Calcular valor de una cuota fija dependiendo de unos valores. 
+
+Caracteristicas
+- No asignar a una persona menor de edad. 
+- Los plazos de los creditos son 12/24/36 Fijo.
+- La tasa de interes debe ser mayor al menor plazo y viceversa. 0.9/1.2/1.5
+- Para la solicitud del préstamo que datos se deben solicitar al cliente?
+
+	1.Nombre
+	2.valor del prestamo
+	3.plazo que desea
+
+
+Autor: Vinni

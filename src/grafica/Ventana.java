@@ -58,17 +58,17 @@ public class Ventana extends javax.swing.JFrame {
             }
         });
         getContentPane().add(btnSimular);
-        btnSimular.setBounds(370, 240, 150, 25);
+        btnSimular.setBounds(370, 240, 150, 29);
 
         jLabel1.setText("Nombre");
         getContentPane().add(jLabel1);
-        jLabel1.setBounds(30, 20, 90, 14);
+        jLabel1.setBounds(30, 20, 90, 16);
         getContentPane().add(cjNombre);
-        cjNombre.setBounds(160, 20, 170, 20);
+        cjNombre.setBounds(160, 20, 170, 26);
 
         jLabel2.setText("Fecha Nacimiento:");
         getContentPane().add(jLabel2);
-        jLabel2.setBounds(30, 60, 120, 14);
+        jLabel2.setBounds(30, 60, 120, 16);
 
         cjFecha.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -76,19 +76,19 @@ public class Ventana extends javax.swing.JFrame {
             }
         });
         getContentPane().add(cjFecha);
-        cjFecha.setBounds(160, 60, 150, 20);
+        cjFecha.setBounds(160, 60, 170, 26);
 
         jLabel3.setText("Valor a prestar:");
         getContentPane().add(jLabel3);
-        jLabel3.setBounds(30, 100, 110, 14);
+        jLabel3.setBounds(30, 100, 110, 16);
         getContentPane().add(cjValor);
-        cjValor.setBounds(160, 100, 140, 20);
+        cjValor.setBounds(160, 100, 170, 26);
 
         jLabel4.setText("Plazo");
         getContentPane().add(jLabel4);
-        jLabel4.setBounds(30, 140, 70, 14);
+        jLabel4.setBounds(30, 140, 70, 16);
         getContentPane().add(cjPlazo);
-        cjPlazo.setBounds(160, 140, 140, 20);
+        cjPlazo.setBounds(160, 140, 170, 26);
 
         cjResultado.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         getContentPane().add(cjResultado);

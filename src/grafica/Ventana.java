@@ -11,6 +11,8 @@ import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 import javax.swing.UnsupportedLookAndFeelException;
 import dao.Cliente;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import logica.Prestamo;
 
 /**
@@ -139,9 +141,31 @@ public class Ventana extends javax.swing.JFrame {
     }
     private void hacerSimulacion(){
         String elNombre = cjNombre.getText();
+        if (cjPlazo.getText().isEmpty() || cjValor.getText().isEmpty()  ){
+            JOptionPane.showMessageDialog(rootPane, "El plazo o el valor son obligatorios y deben ser un numeros");
+            return ;            
+        }
         int elPlazo = Integer.parseInt(cjPlazo.getText());
         Double elvalor = new Double(cjValor.getText());
-        Cliente elCliente = new Cliente(cjNombre.getText(), new Date());
+        
+        String lafecha = cjFecha.getText();
+        Date fecha= null;
+        if (cjFecha.getText().isEmpty()){
+            JOptionPane.showMessageDialog(rootPane, "No hay fecha, es obligatoria");
+            return ;
+        }else {
+            SimpleDateFormat sd = new SimpleDateFormat("dd/MM/yyyy");
+            try {
+                fecha = sd.parse(lafecha);
+            } catch (ParseException ex) {
+                Logger.getLogger(Ventana.class.getName()).log(Level.SEVERE, "NO se pudo convertir la fecha", ex);
+            }
+            
+        }
+        Cliente elCliente = new Cliente(cjNombre.getText(), fecha);
+        
+        
+        
         Prestamo pre = new Prestamo(elCliente, elPlazo, elvalor);
         Double res = pre.hacerSimulacion();
         if (res == null ){

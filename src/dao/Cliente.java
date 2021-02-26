@@ -5,6 +5,11 @@
  */
 package dao;
 
+import java.time.LocalDate;
+import java.time.Month;
+import java.time.Period;
+import java.time.format.DateTimeFormatter;
+import java.util.Calendar;
 import java.util.Date;
 
 /**
@@ -39,8 +44,15 @@ public class Cliente {
         return this.nombre+ " "+this.fechaNac;
     }
     private int saberEdad(){
-        //calcular la edad 
-        return 18;
+        Calendar fechaNacC = Calendar.getInstance();
+        fechaNacC.setTime(fechaNac);
+        LocalDate fNc = LocalDate.of(
+                fechaNacC.get(Calendar.YEAR), 
+                fechaNacC.get(Calendar.MONTH)+1, 
+                fechaNacC.get(Calendar.DATE));
+        Period edad = Period.between(fNc, LocalDate.now());
+        return edad.getYears();
+        
     }
     public boolean esCandidato(){
         int edad = this.saberEdad();
@@ -50,7 +62,4 @@ public class Cliente {
         return false; 
                 
     }
-
-    
-    
 }

@@ -6,6 +6,7 @@
 package logica;
 
 import dao.Cliente;
+import utilidades.ManejadorArchivos;
 
 /**
  *
@@ -17,6 +18,7 @@ public class Prestamo {
     private Double intereses;
     private int plazo;
     private Double valorPrestamo;
+    private Boolean hayArchivo;
 
     public Prestamo(Cliente cliente, int plazo, Double valorPrestamo){
         this.cliente = cliente;
@@ -44,13 +46,32 @@ public class Prestamo {
 
     
     public Double hacerSimulacion(){
+        this.hayArchivo = false;
         if (this.cliente.esCandidato()){
             Double rta = (valorPrestamo/plazo)*intereses;
+            if(ManejadorArchivos.guardar(this, rta)){
+                this.hayArchivo = true;
+            }
             return rta;
         }
         return null;
     }
-
+    public Double[] hacerSimulacionD(){
+        Double[] d = new Double[2];
+        d[1]=0D;
+        if (this.cliente.esCandidato()){
+            Double rta = (valorPrestamo/plazo)*intereses;
+            d[0]=rta;
+            if (ManejadorArchivos.guardar(this, rta)){
+                d[1]=1D;    
+            }
+            return d;
+        }
+        return null;
+    }
+    public boolean hayArchivo(){
+        return this.hayArchivo;
+    }
     private void cargarInteres() {
        
         if(plazo == 12){

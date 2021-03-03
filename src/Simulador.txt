@@ -11,5 +11,12 @@ Caracteristicas
 	2.valor del prestamo
 	3.plazo que desea
 
+- Generar un archivo donde se almacenen todos los simulacros realizados , este 
+archivo se debe llamar PrestamsosVinni.ubc.
+
+La estuctura de la informacion del archivo es:
+//Fecha :  nombre / candidato / valor solicitado / tasa / cuota
+
+* Para la fecha el formato de salida es dd/MM/yyyy
 
 Autor: Vinni

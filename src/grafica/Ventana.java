@@ -162,6 +162,10 @@ public class Ventana extends javax.swing.JFrame {
             }
             
         }
+        if (elPlazo!= 12 && elPlazo!= 24 && elPlazo!= 36) {
+            JOptionPane.showMessageDialog(rootPane, "El plazo debe ser 12 o 24 o 36, corrija");
+            return ;
+        }
         Cliente elCliente = new Cliente(cjNombre.getText(), fecha);
         
         
@@ -173,6 +177,10 @@ public class Ventana extends javax.swing.JFrame {
         }else {
             //JOptionPane.showMessageDialog(this, "Su pago mensual es  "+res.toString());
             this.cjResultado.setText(res.toString());
+            if (pre.hayArchivo()){
+                JOptionPane.showMessageDialog(this, "Se almaceno en el archivo ");
+            }
+            
         }
         //JOptionPane.showMessageDialog(this, "Va a realizar la simulacion");
         
